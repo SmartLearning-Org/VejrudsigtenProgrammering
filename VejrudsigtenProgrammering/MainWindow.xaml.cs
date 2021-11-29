@@ -25,9 +25,20 @@ namespace VejrudsigtenProgrammering
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
+            string by = By.Text;
 
+            WeatherService service = new(by);
+            await service.UpdateWeatherAsync();
+
+            double temperatur = service.TodayTemperature;
+            string beskrivelse = service.TodayDescription;
+
+            // Vejret er regn og det er 8.4 grader
+
+            string besked = $"Vejret er {beskrivelse} og det er {temperatur} grader";
+            Vejrudsigten.Content = besked;
         }
     }
 }
