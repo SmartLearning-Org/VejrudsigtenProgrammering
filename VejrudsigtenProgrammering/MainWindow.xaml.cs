@@ -36,10 +36,19 @@ namespace VejrudsigtenProgrammering
             string beskrivelse = service.TodayDescription;
 
             string besked = $"Vejret er {beskrivelse} og det er {temperatur} grader";
+            besked += "Temperaturerne de kommende dage bliver: ";
+
+            for (int dag = 0; dag < 3; dag++)
+            {
+                // dag + 1 fordi dag 0 er i dag, og vi starter ved i morgen
+                double nyTemperatur = service.FutureTemperature(dag + 1);
+                besked += nyTemperatur + " ";
+            }
+
             Vejrudsigten.Content = besked;
 
             string filnavn;
-            switch(beskrivelse)
+            switch (beskrivelse)
             {
                 case "Klart vejr":
                     filnavn = "Klart.png";
@@ -63,6 +72,7 @@ namespace VejrudsigtenProgrammering
             BitmapImage image = new(uri);
 
             VejrType.Source = image;
+
         }
     }
 }

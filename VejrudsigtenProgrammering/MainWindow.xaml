@@ -14,9 +14,9 @@
         <Label Content="Hvilken by vil du se vejrudsigten for?" HorizontalAlignment="Left" Margin="-4,29,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <TextBox x:Name="By" HorizontalAlignment="Left" Margin="175,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
         <Button Content="Opdatér" HorizontalAlignment="Left" Margin="327,33,0,0" VerticalAlignment="Top" Click="Button_Click" Grid.Column="1"/>
-        <Label x:Name="Vejrudsigten" Content="" HorizontalAlignment="Left" Margin="-4,83,0,0" VerticalAlignment="Top" Width="449" Grid.ColumnSpan="2"/>
+        <Label x:Name="Vejrudsigten" Content="" HorizontalAlignment="Left" Margin="-4,83,0,0" VerticalAlignment="Top" Width="526" Grid.ColumnSpan="2"/>
         <Image x:Name="VejrType" HorizontalAlignment="Left" Height="100" Margin="446,0,0,0" VerticalAlignment="Center" Width="100" Grid.Column="1"/>
-        
+
 
     </Grid>
 </Window>
