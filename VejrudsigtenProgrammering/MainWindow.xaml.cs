@@ -35,10 +35,34 @@ namespace VejrudsigtenProgrammering
             double temperatur = service.TodayTemperature;
             string beskrivelse = service.TodayDescription;
 
-            // Vejret er regn og det er 8.4 grader
-
             string besked = $"Vejret er {beskrivelse} og det er {temperatur} grader";
             Vejrudsigten.Content = besked;
+
+            string filnavn;
+            switch(beskrivelse)
+            {
+                case "Klart vejr":
+                    filnavn = "Klart.png";
+                    break;
+                case "Regn":
+                    filnavn = "regn.png";
+                    break;
+                case "Sne":
+                    filnavn = "sne.png";
+                    break;
+                case "Skyet":
+                    filnavn = "skyet.png";
+                    break;
+                default:
+                    filnavn = "andet.png";
+                    break;
+            }
+
+            filnavn = $"/Billeder/{filnavn}";
+            Uri uri = new(filnavn, UriKind.Relative);
+            BitmapImage image = new(uri);
+
+            VejrType.Source = image;
         }
     }
 }
