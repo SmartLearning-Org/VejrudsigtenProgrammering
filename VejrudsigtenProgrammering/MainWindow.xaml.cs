@@ -73,6 +73,43 @@ namespace VejrudsigtenProgrammering
 
             VejrType.Source = image;
 
+            string[] kommendeDage = service.GetAllFutureDescriptions();
+            var billeder = new[] { TypeDag1, TypeDag2, TypeDag3 };
+
+            for(int dag = 0; dag < kommendeDage.Length; dag++)
+            {
+                beskrivelse = kommendeDage[dag];
+                switch (beskrivelse)
+                {
+                    case "Klart vejr":
+                        filnavn = "Klart.png";
+                        break;
+                    case "Regn":
+                        filnavn = "regn.png";
+                        break;
+                    case "Sne":
+                        filnavn = "sne.png";
+                        break;
+                    case "Skyet":
+                        filnavn = "skyet.png";
+                        break;
+                    default:
+                        filnavn = "andet.png";
+                        break;
+                }
+                filnavn = $"/Billeder/{filnavn}";
+                uri = new(filnavn, UriKind.Relative);
+                image = new(uri);
+                billeder[dag].Source = image;
+            }
+
+            double[] kommendeTemperaturer = service.GetAllFutureTemperatures();
+            var temperaturer = new[] { TemperaturDag1, TemperaturDag2, TemperaturDag3 };
+
+            for (int dag = 0; dag < kommendeTemperaturer.Length; dag++)
+            {
+                temperaturer[dag].Content = $"{kommendeTemperaturer[dag]} C";
+            }
         }
     }
 }

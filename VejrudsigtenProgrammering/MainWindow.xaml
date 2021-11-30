@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VejrudsigtenProgrammering"
         mc:Ignorable="d"
-        Title="Vejrudsigten" Height="200" Width="600">
+        Title="Vejrudsigten" Height="400" Width="600">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="69*"/>
@@ -16,6 +16,17 @@
         <Button Content="Opdatér" HorizontalAlignment="Left" Margin="327,33,0,0" VerticalAlignment="Top" Click="Button_Click" Grid.Column="1"/>
         <Label x:Name="Vejrudsigten" Content="" HorizontalAlignment="Left" Margin="-4,83,0,0" VerticalAlignment="Top" Width="526" Grid.ColumnSpan="2"/>
         <Image x:Name="VejrType" HorizontalAlignment="Left" Height="100" Margin="446,0,0,0" VerticalAlignment="Center" Width="100" Grid.Column="1"/>
+        <Label Grid.Column="1" Content="I morgen" HorizontalAlignment="Left" Margin="19,220,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="TypeDag1" Grid.Column="1" HorizontalAlignment="Left" Height="75" Margin="19,251,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="TemperaturDag1" Grid.Column="1" Content="C" HorizontalAlignment="Left" Margin="27,329,0,0" VerticalAlignment="Top" Width="50"/>
+
+        <Label Grid.Column="1" Content="I overmorgen" HorizontalAlignment="Left" Margin="119,220,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="TypeDag2" Grid.Column="1" HorizontalAlignment="Left" Height="75" Margin="119,251,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="TemperaturDag2" Grid.Column="1" Content="C" HorizontalAlignment="Left" Margin="127,329,0,0" VerticalAlignment="Top" Width="50"/>
+
+        <Label Grid.Column="1" Content="Dagen efter" HorizontalAlignment="Left" Margin="219,220,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="TypeDag3" Grid.Column="1" HorizontalAlignment="Left" Height="75" Margin="219,251,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="TemperaturDag3" Grid.Column="1" Content="C" HorizontalAlignment="Left" Margin="227,329,0,0" VerticalAlignment="Top" Width="50"/>
 
 
     </Grid>
